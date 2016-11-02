@@ -29,6 +29,10 @@ export function validateChar(str: string): boolean {
     let charRegex = "\\u0009|\\u000A|\\u000D|[\\u0020-\\uD7FF]";
     let surrogateCharRegex = "[\\uD800-\\uDBFF][\\uDC00-\\uDFFF]";
 
+    if (str.length > 1024) {
+        return true;
+    }
+
     return new RegExp("^((" + charRegex + ")|(" + surrogateCharRegex + "))*$")
         .test(str);
 }
