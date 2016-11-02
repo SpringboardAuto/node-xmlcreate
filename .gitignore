@@ -2,7 +2,6 @@
 .idea/
 
 # JavaScript and TypeScript
-lib/
 test/lib/
 
 # Documentation
